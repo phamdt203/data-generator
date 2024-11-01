@@ -78,25 +78,11 @@ def predict(tree, X):
     return [predict_sample(tree, sample) for sample in X]
 
 from sklearn.metrics import confusion_matrix
-# def evaluate_metrics(y_true, y_pred):
-#     cm = confusion_matrix(y_true, y_pred)
-#     tp = cm[1, 1] if cm.shape == (2, 2) else 0 # True Positive
-#     tn = cm[0, 0] if cm.shape == (2, 2) else 0 # True Negative
-#     fp = cm[0, 1] if cm.shape == (2, 2) else 0 # False Positive   
-#     fn = cm[1, 0] if cm.shape == (2, 2) else 0 # False Negative
-
-#     accuracy = (tp + tn) / (tp + tn + fp + fn)
-#     precision = tp / (tp + fp) if (tp + fp) != 0 else 0
-#     recall = tp / (tp + fn) if (tp + fn) != 0 else 0
-#     f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) != 0 else 0
-    
-#     return accuracy, precision, recall, f1_score
 
 def evaluate_metrics(y_true, y_pred):
     cm = confusion_matrix(y_true, y_pred)
     num_classes = cm.shape[0]
     
-    # Đối với bài toán đa lớp, tính precision, recall, f1-score cho mỗi lớp và trung bình cộng kết quả
     precision_per_class = []
     recall_per_class = []
     f1_score_per_class = []
@@ -115,10 +101,8 @@ def evaluate_metrics(y_true, y_pred):
         recall_per_class.append(recall)
         f1_score_per_class.append(f1_score)
 
-    # Tính độ chính xác tổng thể
     accuracy = np.trace(cm) / np.sum(cm)
     
-    # Trung bình macro cho precision, recall, f1-score
     precision = np.mean(precision_per_class)
     recall = np.mean(recall_per_class)
     f1_score = np.mean(f1_score_per_class)
