@@ -1,20 +1,52 @@
 import numpy as np
 import pandas as pd
 from collections import Counter
+from sklearn.metrics import confusion_matrix
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
 
-def entropy(y):
-    """ Entropy is a measure of the uncertainty or randomness in a set of labels. 
-    Used to evaluate the distribution of classes in the data."""
+def entropy(y: np.ndarray)->float:
+    """
+    Calculates the entropy of a label distribution.
+
+    Args:
+        y (array): Array of labels.
+
+    Returns:
+        float: Entropy of the label distribution.
+    """
     counts = np.bincount(y)
     probabilities = counts / len(y)
     return -np.sum([p * np.log2(p) for p in probabilities if p > 0])
 
-def split_data(X, y, feature_idx, threshold):
+def split_data(X: np.ndarray, y: np.ndarray, feature_idx: int, threshold: float)->tuple:
+    """
+    Splits the dataset based on a feature and a threshold.
+
+    Args:
+        X (np.ndarray): Feature matrix.
+        y (np.ndarray): Labels array.
+        feature_idx (int): Index of the feature to split on.
+        threshold (float): Threshold value to split the feature on.
+
+    Returns:
+        tuple: Split datasets (X_left, y_left, x_right, y_right).
+    """
     left_mask = X[:, feature_idx] <= threshold
     right_mask = ~left_mask
     return X[left_mask], y[left_mask], X[right_mask], y[right_mask]
 
-def best_split(X, y):
+def best_split(X: np.ndarray, y: np.ndarray)->tuple:
+    """
+    Find the best feature and threshold to split the data to maximize information gain.
+
+    Args:
+        X (np.ndarray): Feature matrix.
+        y (np.ndarray): Labels array.
+
+    Returns:
+        tuple: Best information gain and the best split (feature index and threshold).
+    """
     best_gain = 0
     best_split = None
     current_entropy = entropy(y)
@@ -40,14 +72,45 @@ def best_split(X, y):
     return best_gain, best_split
 
 class DecisionTreeNode:
-    def __init__(self, feature_idx=None, threshold=None, left=None, right=None, *, value=None):
+    """
+    A class representing a node in a decision tree.
+
+    Attributes:
+        feature_idx (int): Index of the feature to split on.
+        threshold (float): Threshold value to split the feature.
+        left (DecisionTreeNode): Left child node.
+        right (DecisionTreeNode): Right child node.
+        value (int): Class label if it is a leaf node.
+    """
+    def __init__(self, feature_idx: int=None, threshold: float=None, left: 'DecisionTreeNode'=None, right: 'DecisionTreeNode'=None, *, value: int=None):
         self.feature_idx = feature_idx
         self.threshold = threshold
         self.left = left
         self.right = right
         self.value = value
 
-def build_tree(X, y, depth=0, max_depth=5):
+    def is_leaf_node(self):
+        """
+        Check if the node is a leaf node.
+
+        Returns:
+            bool: True if the node is a leaf node, otherwise False.
+        """
+        return self.value is not None
+
+def build_tree(X: np.ndarray, y: np.ndarray, depth=0, max_depth=5)->'DecisionTreeNode':
+    """
+    Builds a decision tree using recursive splitting.
+
+    Args:
+        X (np.ndarray): Feature matrix.
+        y (np.ndarray): Labels array.
+        depth (int, optional): Current depth of the tree. Defaults to 0.
+        max_depth (int, optional): Maximum depth of the tree. Defaults to 5.
+
+    Returns:
+        DecisionTreeNode: Root node of the decision tree.
+    """
     n_samples, n_features = X.shape
     n_labels = len(np.unique(y))
 
@@ -66,7 +129,17 @@ def build_tree(X, y, depth=0, max_depth=5):
     right_child = build_tree(X_right, y_right, depth + 1, max_depth)
     return DecisionTreeNode(split["feature_idx"], split["threshold"], left_child, right_child)
 
-def predict_sample(node, sample):
+def predict_sample(node: 'DecisionTreeNode', sample: np.ndarray)->int:
+    """
+    Predicts the class label for a single sample by traversing the decision tree.
+
+    Args:
+        node (DecisionTreeNode): Root node of the decision tree.
+        sample (np.ndarray): A single data sample.
+
+    Returns:
+        int: Predicted class label.
+    """
     if node.value is not None:
         return node.value
     if sample[node.feature_idx] <= node.threshold:
@@ -74,12 +147,30 @@ def predict_sample(node, sample):
     else:
         return predict_sample(node.right, sample)
 
-def predict(tree, X):
+def predict(tree: 'DecisionTreeNode', X: np.ndarray)->list:
+    """
+    Predicts class labels for multiple samples using a trained decision tree.
+
+    Args:
+        tree (DecisionTreeNode): Root node of the decision tree.
+        X (np.ndarray): Feature matrix of samples.
+
+    Returns:
+        list: Predicted class labels for all samples.
+    """
     return [predict_sample(tree, sample) for sample in X]
 
-from sklearn.metrics import confusion_matrix
+def evaluate_metrics(y_true: np.ndarray, y_pred: np.ndarray)->tuple:
+    """
+    Evaluates the model performance using confusion matrix and computes accuracy, precision, recall and F1 score.
 
-def evaluate_metrics(y_true, y_pred):
+    Args:
+        y_true (np.ndarray): True class labels.
+        y_pred (np.ndarray): Predicted class labels.
+
+    Returns:
+        tuple: Accuracy, precision, recall and F1 score of the model.
+    """
     cm = confusion_matrix(y_true, y_pred)
     num_classes = cm.shape[0]
     
@@ -109,9 +200,6 @@ def evaluate_metrics(y_true, y_pred):
     
     return accuracy, precision, recall, f1_score
 
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-
 if __name__ == "__main__":
     iris = load_iris()
     X, y = iris.data, iris.target
@@ -123,7 +211,7 @@ if __name__ == "__main__":
 
     accuracy, precision, recall, f1_score = evaluate_metrics(y_test, predictions)
 
-    with open("decision_tree\metrics.txt", "w") as file:
+    with open("test\data-generator\decision_tree\decision_tree_metrics.txt", "w") as file:
         file.write(f"Accuracy: {accuracy:.2f}\n")
         file.write(f"Precision: {precision:.2f}\n")
         file.write(f"Recall: {recall:.2f}\n")
