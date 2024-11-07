@@ -1,0 +1,231 @@
+1 - StudentID - Mã sinh viên 
+2 - Gender - Giới tính
+3 - ParentEdu - Hãy vui lòng cho biết trình độ của bố/mẹ bạn như thế nào?
+
+Nếu bố/mẹ bạn có trình độ học vấn Tiểu học, chọn số 1
+Nếu bố/mẹ bạn có trình độ học vấn THCS,  chọn số 2
+Nếu bố/mẹ bạn có trình độ học vấn THPT,  chọn số 3
+Nếu bố/mẹ bạn có trình độ học vấn Cao Đẳng,  chọn số 4
+Nếu bố/mẹ bạn có trình độ học vấn Đại học/Sau đại học, ghi số 5
+Còn khác, ghi số 6
+4 - PartTimeJob - Hãy cho biết, bạn có làm thêm không?
+
+Nếu bạn có làm thêm ghi số 2, không làm thêm ghi số "1"
+
+5 - FinancialSupport - Hãy cho biết nguồn hỗ trợ kinh phí học tập của bạn? Bạn có thể lựa chọn nhiều phương án, cách nhau bởi dấu phẩy ","
+Nếu nguồn hỗ trợ kinh phí học tập của bạn từ gia đình, ghi số 1
+Nếu nguồn hỗ trợ kinh phí học tập của bạn từ Nhà trường, ghi số 2
+Nếu nguồn hỗ trợ kinh phí học tập của bạn từ bản thân, ghi số 3
+Nguồn khác, ghi số 4
+6 - StudyTime - "Hãy cho biết, thời gian học tập trung bình trong 1 ngày của bạn?
+Dưới 1h ghi 1
+tỪ 1h - 3h ghi 2
+Từ 3h - 6h ghi 3
+Từ 6h - 8h ghi 4
+Trên 8h ghi 5 
+"
+7 - SocialMediaTime - "Hãy cho biết, thời gian sử dụng MXH trung bình trong 1 ngày của bạn?
+Dưới 1h ghi 5
+tỪ 1h - 3h ghi 4
+Từ 3h - 6h ghi 3
+Từ 6h - 8h ghi 2
+Trên 8h ghi 1
+
+8 - SocialMediaUse - Hãy cho biết, các trang mạng xã hội hay sử dụng của bạn? Bạn có thể lựa chọn nhiều phương án, cách nhau bởi dấu phẩy ","
+
+Nếu bạn sử dụng Facebook, ghi số 1
+Nếu bạn sử dụng Zalo, ghi số 2
+Nếu bạn sử dụng Viber, ghi số 3
+Nếu bạn sử dụng Telegram, ghi số 4
+Nếu bạn sử dụng Twitter, ghi số 5
+Nếu bạn sử dụng Tiktok, ghi số 6
+Nếu bạn sử dụng Instagram, ghi số 7
+Nếu bạn sử dụng các trang mạng xã hội khác, ghi số 8
+
+9 - HealthStatus - Tình trạng sức khỏe hiện nay của bạn?
+Nếu Hoàn toàn khỏe mạnh, ghi số 4
+Nếu Khỏe mạnh, ghi số 3
+Nếu Hơi ốm yếu, ghi số 2
+Nếu Hay ốm yếu, ghi số 1
+10 - MiddleSchoolGPA - Điểm THCS
+11 - MathScore - Điểm Toán thi THPT
+12 - LitScore - Điểm Văn thi THPT
+13 - EngScore - Điểm Anh thi THPT
+14 - AdmissionScore - THXT
+15 - HistoryScore - Điểm Sử thi THPT
+16 - CivicEdScore - Điểm GDCD thi THPT
+17 - PhysicsScore - Điểm Lý thi THPT
+18 - ChemScore - Điểm Hóa thi THPT
+19 - BioScore - Điểm Sinh thi THPT
+20 - HighSchoolGPA - Điểm THPT
+21 - EntryEngScore - Điểm TA đầu vào
+22 - AdmissionMethod - Bạn đỗ vào trường Đại học Thủ đô Hà Nội, bằng phương thức nào?
+
+Nếu dùng phương thức xét học bạ, chọn số 1
+Nếu dùng phương thức xét điểm thi THPT Quốc gia, chọn số 2
+Nếu được tuyển thẳng, chọn số 3
+Nếu dùng phương thức khác, chọn số 4.
+23 - AdmissionPriority - Bạn trúng tuyển vào Đại học Thủ đô Hà Nội ở nguyện vọng mấy?
+
+Nếu trúng tuyển nguyện vọng 1, chọn số 6
+Nếu trúng tuyển nguyện vọng 2, chọn số 5
+Nếu trúng tuyển nguyện vọng 3, chọn số 4
+Nếu trúng tuyển nguyện vọng 4, chọn số 3
+Nếu trúng tuyển nguyện vọng 5, chọn số 2
+Nếu trúng tuyển nguyện vọng khác, chọn số 1
+
+24 - Scholarship - Hãy cho biết, bạn có học bổng không?
+Nếu bạn có học bổng chọn số 2, nếu không có học bổng chọn số "1"
+
+25 - Adaptability - Hãy cho biết, mức độ thích ứng với môi trường học tập tại trường Đại học Thủ Đô Hà Nội của bạn như thế nào?
+
+- Nếu không thích ứng với môi trường học tập, chọn số 1
+- Nếu ít thích ứng với môi trường học tập, chọn số 2
+- Nếu thích ứng (bình thường) với môi trường học tập, chọn số 3
+- Nếu khá thích ứng với môi trường học tập, chọn số 4
+- Nếu rất thích ứng với môi trường học tập, chọn số 5
+
+26 - StudyMethod - Hãy cho biết Phương pháp học tập đại học của bạn ở trường Đại học Thủ đô Hà Nội như thế nào? 
+
+- Nếu Không hiệu quả, chọn số 1
+- Nếu ít hiệu quả, chọn số 2
+- Nếu Hiệu quả, chọn số 3
+- Nếu Khá hiệu quả, chọn số 4
+- Nếu Rất hiệu quả, chọn số 5
+
+27 - UnivSupport - Bạn hãy cho biết mức độ hỗ trợ của trường Đại học Thủ đô Hà Nội như thế nào?
+
+- Nếu không hỗ trợ, chọn số 1
+- Nếu ít hỗ trợ, chọn số 2
+- Nếu hỗ trợ, chọn số 3
+- Nếu Khá hỗ trợ, chọn số 4
+- Nếu Rất hỗ trợ, chọn số 5
+
+28 - FacultySupport - Bạn hãy cho biết mức độ hỗ trợ của giảng viên trường Đại học Thủ đô Hà Nội như thế nào?
+
+- Nếu không hỗ trợ, chọn số 1
+- Nếu ít hỗ trợ, chọn số 2
+- Nếu hỗ trợ bình thường, chọn số 3
+- Nếu Khá hỗ trợ, chọn số 4
+- Nếu Rất hỗ trợ, chọn số 5
+
+29 - FacilityQuality - Bạn hãy cho biết điều kiện cơ sở vật chất, trang thiết bị của trường Đại học Thủ đô Hà Nội như thế nào?
+
+- Nếu không tốt, chọn số 1
+- Nếu bình thường, chọn số 2
+- Nếu tốt, chọn số 3
+- Nếu Khá tốt, chọn số 4
+- Nếu Rất tốt, chọn số 5
+
+30 - FacultyQuality - Bạn hãy cho biết Chất lượng giảng viên của trường Đại học Thủ đô Hà Nội như thế nào?
+
+- Nếu không chất lượng, chọn số 1
+- Nếu ít chất lượng, chọn số 2
+- Nếu chất lượng, chọn số 3
+- Nếu Khá chất lượng, chọn số 4
+- Nếu Rất chất lượng, chọn số 5
+
+31 - CurriculumRelevance - Bạn hãy cho biết Mức độ phù hợp của Chương trình đào tạo trường Đại học Thủ đô Hà Nội như thế nào?
+
+- Nếu không phù hợp, chọn số 1
+- Nếu ít phù hợp, chọn số 2
+- Nếu phù hợp, chọn số 3
+- Nếu khá phù hợp, chọn số 4
+- Nếu rất phù hợp, chọn số 5
+
+32 - Competitiveness - Hãy cho biết mức độ cạnh tranh trong học tập, nghiên cứu trong lớp học của bạn như thế nào?
+
+- Nếu không cạnh tranh, chọn số 1
+- Nếu ít cạnh tranh, chọn số 2
+- Nếu cạnh tranh, chọn số 3
+- Nếu Khá cạnh tranh, chọn số 4
+- Nếu rất cạnh tranh, chọn số 5
+
+33 - PeerInfluence - Hãy cho biết, mức độ ảnh hưởng của bạn bè đến kết quả học tập của bạn như thế nào?
+
+- Nếu không ảnh hưởng, chọn số 1
+- Nếu ít ảnh hưởng, chọn số 2
+- Nếu ảnh hưởng, chọn số 3
+- Nếu Khá ảnh hưởng, chọn số 4
+- Nếu Rất ảnh hưởng, chọn số 5
+
+34 - MotivationSurvey - II. PHẦN KHẢO SÁT ĐỘNG LỰC HỌC TẬP CỦA SINH VIÊN
+
+Theo bạn, môn nào trong các môn thi tốt nghiệp Trung học phổ thông Quốc gia nêu trên có ảnh hưởng nhiều trong quá trình học Đại học của bạn?
+
+Nếu bạn chọn môn Toán, chọn số 1
+Nếu bạn chọn môn Anh, chọn số 2
+Nếu bạn chọn môn Lý, chọn số 3
+Nếu bạn chọn môn Văn, chọn số 4
+Nếu bạn chọn môn Hóa, chọn số 5
+Nếu bạn chọn môn Sinh, chọn số 6
+Nếu bạn chọn môn Sử, chọn số 7
+Nếu bạn chọn môn Địa, chọn số 8
+Nếu bạn chọn môn GDCD, chọn số 9
+
+35 - MajorMotivation - Động lực của bạn chọn ngành học này? Bạn có thể lựa chọn nhiều phương án và cách nhau bởi dấu phẩy ","
+
+Nếu bạn Cảm thấy thích thú với ngành học, chọn số 1
+Nếu bạn Cảm thấy bản thân có năng lực để theo đuổi ngành học, chọn số 2
+Nếu bạn chọn Theo ý kiến gia đình, chọn số 3
+Nếu bạn chọn Có nhiều cơ hội nghề nghiệp cho tương lai, chọn số 4
+Nếu bạn chọn Mức học phí phù hợp, chọn số 5
+Nếu bạn chọn Điểm đầu vào phù hợp, chọn số 6
+Nếu bạn chọn Ngành đào tạo có thương hiệu, uy tín, chọn số 7
+Nếu bạn chọn Khác, chọn số 8
+
+36 - LinearAlg - Đại số tuyến tính(3)
+37 - Calc1 - Giải tích 1(3)
+38 - AnalyticGeom - Hình học giải tích(2)
+39 - Psychology - Tâm lý học(3)
+40 - Marxism1 - Những nguyên lý 
+cơ bản của chủ nghĩa
+ Mác Lenin 1(2)
+41 - Informatics - Tin học(2)
+42 - Calc2 - Giải tích 2(3)
+43 - Pedagogy - Giáo dục học(3)
+44 - Marxism2 - Những NLCB của CN Mác - Lênin 2(3) KTCT
+45 - English - Tiếng Anh(5)
+46 - Elective3 - TỰ CHỌN 3 (Cơ sở văn hóa VN, Hà Nội học)
+47 - TeachingSkills1 - Nghiệp vụ sư phạm 1(2)
+48 - RevolutionHistory - Đường lối Cách mạng của Đảng cộng sản Việt Nam(3)
+49 - GenAlg - Đại số đại cương(3)
+50 - Calc3 - Giải tích 3(2)
+51 - MathTeachMeth - PPDH đại cương môn Toán(2)
+52 - PracticalVietnamese - Tiếng Việt thực hành(2)
+53 - Elective - TỰ CHỌN (Âm nhạc và cảm thụ âm nhạc, mỹ thuật và cảm thụ mỹ thuật, biển và hải đảo VN, ...)
+54 - AffineEuclidGeom - Hình học Afin và hình học Ơclit(2)
+55 - Arithmetic - Số học(2)
+56 - TeachingSkills2 - Nghiệp vụ sư phạm 2(3)
+57 - HoChiMinhIdeology - Tư tưởng Hồ Chí Minh(2)
+58 - ComplexFunc - Hàm biến phức(3)
+59 - ProjectiveGeom - Hình học xạ ảnh(2)
+60 - NumberTheory - Lý thuyết số(2)
+61 - TeachingSkills3 - Nghiệp vụ sư phạm 3(2)
+62 - TeachInternship1 - Thực tập sư phạm 1(2)
+63 - GenTopology - Tôpô đại cương(2)
+64 - ElemAlg - Đại số sơ cấp(3)
+65 - MeasureTheory - Lý thuyết độ đo và tích phân(2)
+66 - ProbStats - Lý thuyết xác suất và thống kê toán học(3)
+67 - DiffEq - Phương trình vi phân(3)
+68 - MathContent - PPDH các nội dung môn Toán(4)
+69 - SpecEnglish - Tiếng Anh chuyên ngành(2)
+70 - FuncAnalysis - Giải tích hàm (3)
+71 - GenLaw - Pháp luật đại cương (2)
+72 - PDEq - Phương trình đạo hàm riêng (3)
+73 - PubAdmin - Quản lý hành chính nhà nước và quản lý ngành(2)
+74 - LinearProgramming - Quy hoạch tuyến tính
+75 - TeachInternship2 - Thực tập sư phạm 2(3)
+76 - NumericalAnalysis - Giải tích số
+77 - ElemGeom - Hình học sơ cấp 
+78 - MathInEnglish - Hướng dẫn dạy học Toán bằng Tiếng ANh
+79 - ResearchMeth - Phương pháp nghiên cứu khoa học(2)
+80 - Elective7 - Tự chọn 7 ( Lịch sử toán. sử dụng các phần mềm trong dạy học(
+81 - Elective8 - Tự chọn 8 (giải tích nâng cao, không gian vecto topo)
+82 - Elective9 - Tự chọn 9 (hình học vi phân, cơ lý thuyết)
+83 - TeachInternship3 - Thực tập sư phạm 3
+84 - Thesis - Khóa luận tốt nghiệp
+85 - DiffInstrAlg - Dạy học phân hóa phần đại số
+86 - DiffInstrGeom - Dạy học phân hóa phần hình học
+87 - AdvSeqFunc - Một số chuyên đề nâng cao về dãy số và hàm số
+88 - Classification - Xếp loại
